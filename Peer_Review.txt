@@ -1,0 +1,20 @@
+Peer review:
+
+Ankit Kumar’s approach :-
+
+-> DFS(Depth first search) based approach to find all the ‘O’s reachable from the boundary ‘O’s.
+-> Marks all the reachable ‘O’s visited in a visited matrix.
+-> Reachable ‘O’s are those which can be visited by following a path from a boundary ‘O’ formed through moving in 4 directions from the boundary ‘O’ and its connecting ‘O’s.
+-> Converts the ‘O’s that are not marked as visited to ‘X’.
+-> This will result in conversion of all the ‘O’s to ‘X’s which are inside a ‘surrounding region’. 
+
+
+
+
+Anuj Mohan Pillai’s approach :-
+
+-> DFS(Depth first search) based approach to find all the ‘O’s reachable from the boundary ‘O’s.
+-> Reachable ‘O’s are those which can be visited by following a path from a boundary ‘O’ formed through moving in 4 directions from the boundary ‘O’ and its connecting ‘O’s.
+-> Marks all the reachable ‘O’s visited in a visited matrix.
+-> Converts the ‘O’s that are not marked as visited to ‘X’.
+-> This will result in conversion of all the ‘O’s to ‘X’s which are inside a ‘surrounding region. 
