@@ -1,0 +1,2 @@
+class EmptyInputException(BaseException):
+    pass
