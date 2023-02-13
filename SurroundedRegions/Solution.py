@@ -1,6 +1,8 @@
 class SurroundedRegions:
     def eliminateSurroundedRegions(self, board):
-
+        variable_O = 'O'
+        vairable_At = '@'
+        variable_X = 'X'
         # n represents the number of rows in board
         n = len(board)
 
@@ -12,34 +14,34 @@ class SurroundedRegions:
 
         # changing all 'O's to '@'s which are reachable from 'O's present on all four boundaries.
         for i in range(m):
-            if board[0][i]== 'O':
-                board[0][i] = '@'
+            if board[0][i]== variable_O:
+                board[0][i] = vairable_At
                 self.change(board, vis, n, m, 0, i)
 
         for i in range(m):
-            if board[n-1][i] == 'O':
-                board[n-1][i] = '@'
+            if board[n-1][i] == variable_O:
+                board[n-1][i] = vairable_At
                 self.change(board, vis, n, m, n-1, i)
 
         for i in range(n):
-            if board[i][0]== 'O':
-                board[i][0] = '@'
+            if board[i][0]== variable_O:
+                board[i][0] = vairable_At
                 self.change(board, vis, n, m, i, 0)
 
         for i in range(n):
-            if board[i][m-1]== 'O':
-                board[i][m-1] = '@'
+            if board[i][m-1]== variable_O:
+                board[i][m-1] = vairable_At
                 self.change( board, vis, n, m, i, m-1)
     
         # changing 'O's that were unreachable from 'O's present on the boundaries to 'X' as they will be surrounded by 'X's
         # changing the '@'s that originally represent 'O's back to 'O' as they are not part of any surrounded region.
         for i in range(n):
             for j in range(m):
-                if board[i][j]=='O':
-                    board[i][j] = 'X'
+                if board[i][j] == variable_O:
+                    board[i][j] = variable_X
 
-                if board[i][j]=='@':
-                    board[i][j]='O'
+                if board[i][j] == vairable_At:
+                    board[i][j] = variable_O
 
 
     # change funtion that works on the concept of DFS(depth first search)
