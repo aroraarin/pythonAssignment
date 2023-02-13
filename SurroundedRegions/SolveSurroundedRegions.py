@@ -40,12 +40,17 @@ class Input(BaseException):
                 currentRow = input()
                 temp = currentRow.split(" ")
 
+                #creating an object of validation class
+                validator = Valid()
+
                 #if user enters "quit" program execution will stop
                 if currentRow=="quit":
                     break
+
                 #checking if the input is invalid
-                elif(len(temp)!=numOfCols or Valid.validator(currentRow)==False):
+                elif(len(temp)!=numOfCols or validator.validator(currentRow)==False):
                     print("Enter valid input.")
+
                 #if corrent input then move to next iteration
                 else:
                     flag = True    
@@ -63,6 +68,7 @@ class Input(BaseException):
             for i in board:
                 print(i)
 
+            #creating an object of SurroundedRegions class
             sol = SurroundedRegions()
 
             #calling elinateSurroundedRegions funtion from SurroundedRegions class
@@ -71,9 +77,10 @@ class Input(BaseException):
             for i in board:
                 print(i)
 
-    except Exception as e:
-        print(e)
+    
     except EmptyInputException as e:
         print("Empty input not allowed.")
     except InvalidInputException as e:
         print("String input not allowed.")
+    except Exception as e:
+        print(e)
